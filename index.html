@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesh Shrestha | IT Infrastructure & Network Security Engineer</title>
+    <style>
+        :root { --bg: #0b0f19; --card-bg: #131c2e; --accent: #38bdf8; --text: #f8fafc; --muted: #94a3b8; --border: #1e293b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+        header h1 { font-size: 2.5rem; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        header h2 { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 1rem; }
+        .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; color: var(--muted); font-size: 0.95rem; }
+        .contact-links a { color: var(--accent); text-decoration: none; }
+        .contact-links a:hover { text-decoration: underline; }
+        section { margin-bottom: 3rem; }
+        section h3 { font-size: 1.4rem; color: var(--text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+        .summary-box { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .skill-card { background: var(--card-bg); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); }
+        .skill-card h4 { color: var(--accent); margin-bottom: 0.75rem; font-size: 1.05rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-size: 0.85rem; padding: 0.25rem 0.65rem; border-radius: 4px; font-weight: 500; border: 1px solid rgba(56, 189, 248, 0.15); }
+        .tag.learning { background: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2); }
+        .timeline-item { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem; }
+        .timeline-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .timeline-header h4 { font-size: 1.15rem; color: var(--text); }
+        .timeline-date { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+        .timeline-company { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.75rem; font-style: italic; }
+        .timeline-item ul { padding-left: 1.25rem; color: var(--muted); font-size: 0.95rem; }
+        .timeline-item li { margin-bottom: 0.5rem; }
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+        @media (max-width: 600px) { .timeline-header { flex-direction: column; } .edu-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nilesh Shrestha</h1>
+            <h2>IT Infrastructure & Network Security Engineer</h2>
+            <div class="contact-links">
+                <span>📍 Bhaktapur, Nepal</span>
+                <span>📞 +977-9841049994</span>
+                <span>✉️ <a href="mailto:nileshshrestha67@gmail.com">nileshshrestha67@gmail.com</a></span>
+                <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h3>Professional Summary</h3>
+            <div class="summary-box">
+                <p>Cisco Certified Network Associate (CCNA) with an MSc in Computer Networking and Cyber Security. Combines robust technical expertise with enterprise hands-on experience managing over 500+ endpoints, configuring resilient network infrastructures, and administering extensive Microsoft 365 environments. Actively scaling architecture skillsets directly into Cloud Engineering and AWS infrastructure ecosystems.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h3>Technical Toolkit</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Cloud Infrastructure (AWS)</h4>
+                    <div class="tags">
+                        <span class="tag learning">💡 Solutions Architect (In-Progress)</span>
+                        <span class="tag">Amazon EC2</span>
+                        <span class="tag">AWS VPC</span>
+                        <span class="tag">Amazon EBS</span>
+                        <span class="tag">Amazon EFS</span>
+                        <span class="tag">Cloud Computing</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Networking & Infrastructure</h4>
+                    <div class="tags">
+                        <span class="tag">CCNA</span>
+                        <span class="tag">Routing & Switching</span>
+                        <span class="tag">VLANs & Subnetting</span>
+                        <span class="tag">Cisco IOS</span>
+                        <span class="tag">Firewalls (Cisco ASA)</span>
+                        <span class="tag">VPN (AnyConnect, OpenVPN)</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Cloud Systems & Identity</h4>
+                    <div class="tags">
+                        <span class="tag">M365 Administration</span>
+                        <span class="tag">Exchange Online</span>
+                        <span class="tag">SharePoint Online</span>
+                        <span class="tag">Syncro RMM</span>
+                        <span class="tag">Google Workspace</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Security & Tooling</h4>
+                    <div class="tags">
+                        <span class="tag">Vulnerability Assessment</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Snort IPS/IDS</span>
+                        <span class="tag">Python & Bash</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3>Professional Experience</h3>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h4>IT Infrastructure and Cloud Administrator</h4>
+                    <span class="timeline-date">May 2024 – Mar 2026</span>
+                </div>
+                <div class="timeline-company">Computer Highway Limited</div>
+                <ul>
+                    <li>Managed Syncro RMM platform to oversee 500+ client endpoints, reducing system downtime by 30% through automation mechanisms.</li>
+                    <li>Configured network firewalls, deployed secure VPN implementations, and optimized enterprise wireless frameworks.</li>
+                    <li>Led M365 tenant infrastructure and lifecycle management for 200+ active users across 10+ corporate clients.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h4>Trainee Cyber Security Consultant</h4>
+                    <span class="timeline-date">Feb 2023 – Apr 2023</span>
+                </div>
+                <div class="timeline-company">Cyber Care Limited (UK)</div>
+                <ul>
+                    <li>Executed targeted vulnerability discovery routines utilizing network analysis engines like Nmap and Wireshark.</li>
+                    <li>Assisted enterprise compliance pipelines targeting UK Cyber Essentials infrastructure certifications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h3>Academic Background</h3>
+            <div class="edu-grid">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h4>MSc Computer Networking & Cyber Security</h4>
+                    </div>
+                    <div class="timeline-company">London Metropolitan University | Merit</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h4>BEng (Hons) Computer Network Engineering</h4>
+                    </div>
+                    <div class="timeline-company">University of Northampton</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
 
