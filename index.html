@@ -3,151 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilesh Shrestha | IT Infrastructure & Network Security Engineer</title>
+    <title>Nilesh Shrestha | Enterprise Infrastructure & Cloud Architect</title>
     <style>
-        :root { --bg: #0b0f19; --card-bg: #131c2e; --accent: #38bdf8; --text: #f8fafc; --muted: #94a3b8; --border: #1e293b; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
-        .container { max-width: 900px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-        header h1 { font-size: 2.5rem; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        header h2 { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 1rem; }
-        .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; color: var(--muted); font-size: 0.95rem; }
-        .contact-links a { color: var(--accent); text-decoration: none; }
-        .contact-links a:hover { text-decoration: underline; }
-        section { margin-bottom: 3rem; }
-        section h3 { font-size: 1.4rem; color: var(--text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
-        .summary-box { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .skill-card { background: var(--card-bg); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); }
-        .skill-card h4 { color: var(--accent); margin-bottom: 0.75rem; font-size: 1.05rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-size: 0.85rem; padding: 0.25rem 0.65rem; border-radius: 4px; font-weight: 500; border: 1px solid rgba(56, 189, 248, 0.15); }
-        .tag.learning { background: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2); }
-        .timeline-item { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem; }
-        .timeline-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem; }
-        .timeline-header h4 { font-size: 1.15rem; color: var(--text); }
-        .timeline-date { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
-        .timeline-company { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.75rem; font-style: italic; }
-        .timeline-item ul { padding-left: 1.25rem; color: var(--muted); font-size: 0.95rem; }
-        .timeline-item li { margin-bottom: 0.5rem; }
-        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
-        @media (max-width: 600px) { .timeline-header { flex-direction: column; } .edu-grid { grid-template-columns: 1fr; } }
+        :root {
+            --bg-main: #020617;
+            --bg-sidebar: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #38bdf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border: #334155;
+            --terminal-bg: #090d16;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-main); color: var(--text-main); display: flex; min-height: 100vh; }
+        .mobile-toggle { display: none; position: fixed; top: 1rem; right: 1rem; background: var(--accent); color: var(--bg-main); border: none; padding: 0.5rem 0.75rem; border-radius: 6px; font-weight: bold; cursor: pointer; z-index: 1000; }
+        .sidebar { width: 320px; background: var(--bg-sidebar); padding: 3rem 2rem; display: flex; flex-direction: column; position: fixed; height: 100vh; border-right: 1px solid var(--border); z-index: 99; transition: transform 0.3s ease; }
+        .profile { margin-bottom: 2.5rem; }
+        .profile h1 { font-size: 1.75rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .profile h2 { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.25rem; font-weight: 600; }
+        .nav-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.95rem; font-family: monospace; padding: 0.6rem 0.8rem; border-radius: 6px; display: block; transition: all 0.2s; }
+        .nav-links a:hover, .nav-links a.active { background: #1e293b; color: var(--accent); padding-left: 1.25rem; }
+        .sidebar-footer { margin-top: auto; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+        .sidebar-footer a { color: var(--accent); text-decoration: none; word-break: break-all; }
+        .main-content { margin-left: 320px; flex: 1; padding: 4rem 6rem; max-width: 1200px; }
+        section { margin-bottom: 5rem; }
+        .section-title { font-size: 1.6rem; color: #fff; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .section-title span { color: var(--accent); font-family: monospace; font-size: 1.1rem; }
+        p { color: #94a3b8; line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .terminal-container { background: var(--terminal-bg); border: 1px solid var(--border); border-radius: 8px; font-family: monospace; padding: 1.25rem; margin-bottom: 3rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5); }
+        .terminal-header { display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.5rem; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-r { background: #ef4444; } .dot-y { background: #eab308; } .dot-g { background: #22c55e; }
+        .terminal-body { color: #38bdf8; font-size: 0.9rem; }
+        .terminal-line { margin-bottom: 0.4rem; }
+        .terminal-output { color: #a7f3d0; margin-left: 1rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .skills-category { background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; }
+        .skills-category h4 { font-size: 0.9rem; text-transform: uppercase; color: #cbd5e1; margin-bottom: 1rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem; }
+        .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .pill { background: var(--bg-main); border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #e2e8f0; font-family: monospace; }
+        .pill.aws-active { border-color: var(--accent-orange); color: var(--accent-orange); background: rgba(249, 115, 22, 0.05); }
+        .filter-buttons { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .filter-btn { background: #1e293b; border: 1px solid var(--border); color: #94a3b8; padding: 0.4rem 1rem; border-radius: 6px; cursor: pointer; font-family: monospace; font-size: 0.85rem; }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: var(--bg-main); border-color: var(--accent); }
+        .project-card { display: block; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; margin-bottom: 1.5rem; transition: all 0.25s; }
+        .card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 10px 25px -10px rgba(56,189,248,0.2); }
+        .card-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .card-title { font-size: 1.2rem; color: #fff; font-weight: 600; }
+        .card-date { font-size: 0.85rem; color: var(--accent); font-family: monospace; }
+        .card-company { font-size: 0.95rem; color: #94a3b8; margin-bottom: 1.25rem; font-style: italic; }
+        .card ul { padding-left: 1.25rem; color: #cbd5e1; font-size: 0.95rem; }
+        .card li { margin-bottom: 0.6rem; }
+        @media (max-width: 1024px) { .main-content { padding: 4rem 3rem; } }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .sidebar { transform: translateX(-100%); width: 280px; }
+            .sidebar.active { transform: translateX(0); }
+            .main-content { margin-left: 0; padding: 5rem 1.5rem; }
+            .card-header { flex-direction: column; gap: 0.25rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <button class="mobile-toggle" onclick="toggleSidebar()">MENU</button>
+    <nav class="sidebar" id="sidebar">
+        <div class="profile">
             <h1>Nilesh Shrestha</h1>
-            <h2>IT Infrastructure & Network Security Engineer</h2>
-            <div class="contact-links">
-                <span>📍 Bhaktapur, Nepal</span>
-                <span>📞 +977-9841049994</span>
-                <span>✉️ <a href="mailto:nileshshrestha67@gmail.com">nileshshrestha67@gmail.com</a></span>
-                <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
+            <h2>Infrastructure & Cloud</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="active">// 01. about_me</a></li>
+            <li><a href="#skills">// 02. tech_toolkit</a></li>
+            <li><a href="#experience">// 03. professional_exp</a></li>
+            <li><a href="#education">// 04. academic_records</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <span>📍 Bhaktapur, Nepal</span>
+            <span>✉️ <a href="mailto:nilesh.shrestha.tech@gmail.com">nilesh.shrestha.tech@gmail.com</a></span>
+            <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn Profile →</a></span>
+        </div>
+    </nav>
+    <main class="main-content">
+         <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
             </div>
-        </header>
+            <div class="terminal-body">
+                <div class="terminal-line">nilesh@infrastructure:~$ <span style="color:#fff">init --profile</span></div>
+                <div class="terminal-line terminal-output">✓ Cisco CCNA Verified [ID: CSCO14475130]</div>
+                <div class="terminal-line terminal-output">✓ MSc Computer Networking & Cyber Security loaded (Passed with Merit)</div>
+                <div class="terminal-line">nilesh@infrastructure:~$ <span style="color:#fff">fetch --aws-status</span></div>
+                <div class="terminal-line terminal-output" style="color:#f97316">⚡ [AWS Solutions Architect Framework]: Learning Modules Active (EC2, VPC, EBS, EFS)</div>
+            </div>
+        </div>
 
-        <section id="summary">
-            <h3>Professional Summary</h3>
-            <div class="summary-box">
-                <p>Cisco Certified Network Associate (CCNA) with an MSc in Computer Networking and Cyber Security. Combines robust technical expertise with enterprise hands-on experience managing over 500+ endpoints, configuring resilient network infrastructures, and administering extensive Microsoft 365 environments. Actively scaling architecture skillsets directly into Cloud Engineering and AWS infrastructure ecosystems.</p>
-            </div>
+        <section id="about">
+            <h3 class="section-title">About Me <span>01</span></h3>
+            <p>I am an infrastructure engineering and network security specialist. Holding an MSc in Computer Networking and Cyber Security and a Cisco CCNA certification, I have direct engineering experience tracking and optimizing over 500+ corporate client systems. Currently expanding my operations architecture into the cloud, specializing in advanced high-availability AWS deployments.</p>
         </section>
 
         <section id="skills">
-            <h3>Technical Toolkit</h3>
+            <h3 class="section-title">Technical Toolkit <span>02</span></h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Cloud Infrastructure (AWS)</h4>
-                    <div class="tags">
-                        <span class="tag learning">💡 Solutions Architect (In-Progress)</span>
-                        <span class="tag">Amazon EC2</span>
-                        <span class="tag">AWS VPC</span>
-                        <span class="tag">Amazon EBS</span>
-                        <span class="tag">Amazon EFS</span>
-                        <span class="tag">Cloud Computing</span>
+                <div class="skills-category">
+                    <h4>Cloud Computing & Storage</h4>
+                    <div class="pills">
+                        <span class="pill aws-active">⚡ AWS Solutions Architect Modules</span>
+                        <span class="pill">Amazon EC2 Compute</span>
+                        <span class="pill">AWS VPC Design</span>
+                        <span class="pill">Amazon EBS Storage</span>
+                        <span class="pill">Amazon EFS Filesystems</span>
+                        <span class="pill">Cloud Infrastructure Deployment</span>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <h4>Networking & Infrastructure</h4>
-                    <div class="tags">
-                        <span class="tag">CCNA</span>
-                        <span class="tag">Routing & Switching</span>
-                        <span class="tag">VLANs & Subnetting</span>
-                        <span class="tag">Cisco IOS</span>
-                        <span class="tag">Firewalls (Cisco ASA)</span>
-                        <span class="tag">VPN (AnyConnect, OpenVPN)</span>
+                <div class="skills-category">
+                    <h4>Routing & Edge Security</h4>
+                    <div class="pills">
+                        <span class="pill">CCNA Security Frameworks</span>
+                        <span class="pill">Cisco IOS Layer 2/3 Switching</span>
+                        <span class="pill">VLAN Isolation & Subnetting</span>
+                        <span class="pill">Cisco ASA Edge Firewalls</span>
+                        <span class="pill">Site-to-Site VPN Topology</span>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <h4>Cloud Systems & Identity</h4>
-                    <div class="tags">
-                        <span class="tag">M365 Administration</span>
-                        <span class="tag">Exchange Online</span>
-                        <span class="tag">SharePoint Online</span>
-                        <span class="tag">Syncro RMM</span>
-                        <span class="tag">Google Workspace</span>
+                <div class="skills-category">
+                    <h4>Enterprise Operations</h4>
+                    <div class="pills">
+                        <span class="pill">M365 Tenant Administration</span>
+                        <span class="pill">Exchange Online Architecture</span>
+                        <span class="pill">SharePoint Site Governance</span>
+                        <span class="pill">Syncro RMM Global Patching</span>
+                        <span class="pill">ConnectWise Remote Control</span>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <h4>Security & Tooling</h4>
-                    <div class="tags">
-                        <span class="tag">Vulnerability Assessment</span>
-                        <span class="tag">Wireshark</span>
-                        <span class="tag">Nmap</span>
-                        <span class="tag">Snort IPS/IDS</span>
-                        <span class="tag">Python & Bash</span>
+                <div class="skills-category">
+                    <h4>Vulnerability Controls</h4>
+                    <div class="pills">
+                        <span class="pill">Wireshark Protocol Analysis</span>
+                        <span class="pill">Nmap Scanning Topologies</span>
+                        <span class="pill">Snort IPS/IDS Engineering</span>
+                        <span class="pill">Python Routine Automation</span>
+                        <span class="pill">Bash Core Scripting</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="experience">
-            <h3>Professional Experience</h3>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h4>IT Infrastructure and Cloud Administrator</h4>
-                    <span class="timeline-date">May 2024 – Mar 2026</span>
-                </div>
-                <div class="timeline-company">Computer Highway Limited</div>
-                <ul>
-                    <li>Managed Syncro RMM platform to oversee 500+ client endpoints, reducing system downtime by 30% through automation mechanisms.</li>
-                    <li>Configured network firewalls, deployed secure VPN implementations, and optimized enterprise wireless frameworks.</li>
-                    <li>Led M365 tenant infrastructure and lifecycle management for 200+ active users across 10+ corporate clients.</li>
-                </ul>
+            <h3 class="section-title">Professional Experience <span>03</span></h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all', event)">Show All</button>
+                <button class="filter-btn" onclick="filterProjects('cloud', event)">Cloud & M365</button>
+                <button class="filter-btn" onclick="filterProjects('security', event)">Network & Cyber Security</button>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h4>Trainee Cyber Security Consultant</h4>
-                    <span class="timeline-date">Feb 2023 – Apr 2023</span>
+            <div class="project-card" data-cat="cloud">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">IT Infrastructure and Cloud Administrator</div>
+                        <div class="card-date">May 2024 – Mar 2026</div>
+                    </div>
+                    <div class="card-company">Computer Highway Limited</div>
+                    <ul>
+                        <li>Automated patch profiles using Syncro RMM across 500+ client endpoints, reducing technical downtime by 30%.</li>
+                        <li>Configured corporate Microsoft 365 environments for 200+ users spanning 10+ isolated commercial tenants.</li>
+                        <li>Built SharePoint governance systems, configuring automated workflows and strict role-based access controls.</li>
+                    </ul>
                 </div>
-                <div class="timeline-company">Cyber Care Limited (UK)</div>
-                <ul>
-                    <li>Executed targeted vulnerability discovery routines utilizing network analysis engines like Nmap and Wireshark.</li>
-                    <li>Assisted enterprise compliance pipelines targeting UK Cyber Essentials infrastructure certifications.</li>
-                </ul>
+            </div>
+            <div class="project-card" data-cat="security">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Trainee Cyber Security Consultant</div>
+                        <div class="card-date">Feb 2023 – Apr 2023</div>
+                    </div>
+                    <div class="card-company">Cyber Care Limited (London, UK)</div>
+                    <ul>
+                        <li>Executed security health checks via targeted Wireshark packet inspections and deep Nmap surface sweeps.</li>
+                        <li>Prepared infrastructure blueprints map-checked against UK Cyber Essentials compliance standards.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="education">
-            <h3>Academic Background</h3>
-            <div class="edu-grid">
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h4>MSc Computer Networking & Cyber Security</h4>
-                    </div>
-                    <div class="timeline-company">London Metropolitan University | Merit</div>
+            <h3 class="section-title">Education Records <span>04</span></h3>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">MSc Computer Networking & Cyber Security</div>
+                    <div class="card-date">Feb 2024</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h4>BEng (Hons) Computer Network Engineering</h4>
-                    </div>
-                    <div class="timeline-company">University of Northampton</div>
+                <div class="card-company">London Metropolitan University, UK — Passed with Merit</div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">BEng (Hons) Computer Network Engineering</div>
+                    <div class="card-date">Sep 2021</div>
                 </div>
+                <div class="card-company">University of Northampton, UK — Second Class Division</div>
             </div>
         </section>
-    </div>
+    </main>
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+        function filterProjects(cat, event) {
+            const cards = document.querySelectorAll('.project-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            cards.forEach(card => {
+                if(cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-
